@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rusty Lake Avatar"
+  short_description: "Create a stylized Rusty Lake group-photo avatar"
+  default_prompt: "Use $rusty-lake-avatar with my attached portrait, then ask me the game, character, and element questions one at a time."
