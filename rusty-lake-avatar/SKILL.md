@@ -22,7 +22,7 @@ Before researching or generating, collect the setup through three separate quest
 2. Which characters should pose with the user?
 3. Which environmental elements or props should appear?
 
-Use the exact menus in [references/scene-and-prompt-guide.md](references/scene-and-prompt-guide.md). Each question must allow `随机` / `auto` and free-form input. After the user chooses a game, randomly select one verified scene from that game unless they also name an exact scene. Do not silently answer any category the user did not answer or mark `auto`.
+Use the exact menus in [references/scene-and-prompt-guide.md](references/scene-and-prompt-guide.md). In every menu, print choices `1` through `10` vertically, one choice per line; never compress them into a slash-separated sentence. Tell the user they may reply with only the number, and accept comma- or punctuation-separated numbers for multi-select questions. Keep `0` for `随机` / `auto` and accept free-form input for choices outside the menu. After the user chooses a game, randomly select one verified scene from that game unless they also name an exact scene. Do not silently answer any category the user did not answer or mark `auto`.
 
 ## Defaults
 
@@ -30,6 +30,7 @@ Use the exact menus in [references/scene-and-prompt-guide.md](references/scene-a
 - Use a square 1:1 canvas suitable for an avatar.
 - Make the person's face the dominant focal point with a medium head-and-shoulders or bust crop matching the approved reference scale. Target the full head silhouette, including hair, at roughly 50–65% of canvas height and the visible facial oval at roughly 38–48%. Do not push the facial oval past 50% unless the user explicitly asks for a tighter close-up.
 - Keep the person human and recognizable from a few signature traits. Never replace their head or face with an animal head.
+- Render the subject with the franchise's pale ivory, chalk-white, or cool light-gray face plane regardless of the source portrait's skin tone. Do not color-match realistic skin. Preserve identity and ethnicity through facial geometry, hair, and other visible anchors rather than photographic pigmentation.
 - Freely change pose and expression to fit the selected scene. Unless the user requests another mood, give the person the weary, downcast, emotionally drained expression used by many Rusty Lake characters.
 - Replace the source clothing by default with a randomly selected, verified Rusty Lake character outfit that fits the scene and the subject's stated or apparent gender presentation. Use explicit user-provided gender information first. If the photo clearly presents as feminine, choose clothing worn by a female character; if it clearly presents as masculine, choose clothing worn by a male character. If presentation is unclear or nonbinary, use a verified gender-neutral outfit or ask instead of guessing. Respect an explicit outfit or cross-gender styling choice.
 - Use one verified game setting and the characters/elements selected during the opening choice.
@@ -54,9 +55,9 @@ Prioritize the Rusty Lake character design over photographic fidelity. Preserve 
 - hairstyle, hairline, or facial hair;
 - characteristic eye, brow, nose, or mouth shape;
 - glasses, jewelry, freckles, scars, or another signature detail;
-- approximate age and skin-tone relationship.
+- approximate age.
 
-Do not preserve realistic skin, detailed lighting, the exact expression, the exact pose, or the original clothes. Use flat pale face shapes, spare black outlines, simplified features, and rigid illustrated anatomy like the supplied game-character references. Default to heavy upper eyelids, slightly raised inner brows, a distant or lowered gaze, a flat or downturned mouth, a long still face, lowered shoulders, and restrained body language. The mood should feel tired, lonely, and quietly defeated rather than cute, glamorous, cheerful, or theatrically tearful.
+Do not preserve realistic skin tone or texture, detailed lighting, the exact expression, the exact pose, or the original clothes. Use a nearly white flat face plane, spare black outlines, simplified features, and rigid illustrated anatomy like the supplied game-character references. Construct the eyes in one of the two approved ways: large white almond/round eyes with tiny dot pupils, or very small bean/dot eyes under short lid lines. Never use realistic iris rendering, large pupils, wet highlights, or glossy photographic eyes. Divide the hair into solid locks and add clearly visible black contour and interior strand lines that follow those locks. Keep the closed mouth pale gray, ivory, or nearly the same color as the face, defined mostly by a thin line; do not use red or saturated pink lip fill. Default to heavy upper eyelids, slightly raised inner brows, a distant or lowered gaze, a flat or downturned mouth, a long still face, lowered shoulders, and restrained body language. The mood should feel tired, lonely, and quietly defeated rather than cute, glamorous, cheerful, or theatrically tearful.
 
 Compose for avatar readability rather than full-body staging. Use the approved medium-close scale: the whole head silhouette is prominent, while the visible facial oval stays around 38–48% of the square's height so surrounding lore remains legible. Show enough neck, shoulders, and upper chest to preserve adult anatomy; the crop must not become chibi, bobblehead, doll-like, a floating head, or an extreme beauty close-up. Keep supporting cast and lore props smaller and behind or beside the face.
 
@@ -68,7 +69,7 @@ Use the built-in image generation tool by default. This is a strong style transf
 
 Build a concise structured prompt from the template in the scene guide. State the 3–5 identity anchors and the canonical scene anchor explicitly. Ask for a square composition and one image. Do not request text, logos, interface chrome, or watermarks.
 
-Make one generation call by default. If inspection shows a critical failure—photorealistic facial modeling, cheerful/glamorous expression, an extreme close-up with the visible facial oval over half the canvas height, a face too small to remain the focal point, fewer than five distinct canonical cues, chibi anatomy, non-square output, all identity anchors lost, gender-incongruent canonical clothing without a user request, original clothing retained without a user request, an animal head replacing the user, an invented/mixed background, or omitted user-selected content—make at most one focused corrective edit and deliver only the best final image.
+Make one generation call by default. If inspection shows a critical failure—photorealistic facial modeling, source-matched natural skin tone instead of a pale game-character face, realistic or glossy eyes, pupils that dominate the eye, hair without visible black interior lines, saturated red/pink lips, cheerful/glamorous expression, an extreme close-up with the visible facial oval over half the canvas height, a face too small to remain the focal point, fewer than five distinct canonical cues, chibi anatomy, non-square output, all identity anchors lost, gender-incongruent canonical clothing without a user request, original clothing retained without a user request, an animal head replacing the user, an invented/mixed background, or omitted user-selected content—make at most one focused corrective edit and deliver only the best final image.
 
 ## Validate and report
 
@@ -77,6 +78,9 @@ Before finishing, verify:
 - the output is square and only one final image is presented;
 - the subject looks like a flat, simplified Rusty Lake game character rather than a realistic painted portrait;
 - 3–5 signature traits still connect the human subject to the attached person;
+- the face is a pale ivory/chalk-white/cool gray flat plane rather than a realistic match to the portrait's skin tone;
+- the eyes use one approved construction—large whites with tiny pupils or small bean/dot eyes—with no glossy realism or oversized pupils;
+- the hair contains visible black contour and interior strand lines, and the mouth remains pale and low-saturation without red or pink lip fill;
 - the unobstructed face is the dominant focal point at the approved medium-close scale: full head silhouette about 50–65% and visible facial oval about 38–48% of canvas height;
 - the default expression is visibly weary and downcast, with restrained body language, unless the user chose another mood;
 - the close crop retains adult neck-and-shoulder anatomy without chibi or bobblehead distortion;

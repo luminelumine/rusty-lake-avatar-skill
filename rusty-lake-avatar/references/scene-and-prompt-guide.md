@@ -4,13 +4,24 @@ Use this guide for every avatar request after inspecting the portrait.
 
 ## Three-turn opening interview
 
-Ask these as three separate turns, not one combined questionnaire. Ask only the next unanswered question, then stop and wait.
+Ask these as three separate turns, not one combined questionnaire. Ask only the next unanswered question, then stop and wait. Every question must show the ten primary choices vertically as `1.` through `10.`, one option per line. Tell the user that a bare number is a complete answer; for multi-select menus, accept forms such as `2, 5, 10`, `2 5 10`, or `2、5、10`. Use `0` for random selection and keep free-form input available beneath the numbered list.
 
 ### Question 1 — game
 
 ```text
-第 1 个问题：你希望从哪一部游戏里随机抽取场景作为构图骨架？
-Samsara Room / Cube Escape: Paradox / Cube Escape: Birthday / Cube Escape: Seasons / Cube Escape: The Lake / Rusty Lake Hotel / Rusty Lake: Roots / Rusty Lake Paradise / The White Door / Underground Blossom / 随机 / 其他（直接输入游戏名）
+第 1 个问题：你希望从哪一部游戏里随机抽取场景作为构图骨架？回复一个序号即可。
+1. Samsara Room
+2. Cube Escape: Paradox
+3. Cube Escape: Birthday
+4. Cube Escape: Seasons
+5. Cube Escape: The Lake
+6. Rusty Lake Hotel
+7. Rusty Lake: Roots
+8. Rusty Lake Paradise
+9. The White Door
+10. Underground Blossom
+0. 随机
+其他：直接输入游戏名
 ```
 
 The user chooses a game, not a generic location. Afterward, research that game and randomly select one visually distinctive, verified scene from it. If the user voluntarily names an exact room or chapter, use that as an override.
@@ -18,8 +29,20 @@ The user chooses a game, not a generic location. Afterward, research that game a
 ### Question 2 — cast
 
 ```text
-第 2 个问题：你想和哪些角色合影？可以多选。
-Dale Vandermeer / Laura Vanderboom / Mr. Owl / Mr. Crow / Harvey / Rose Vanderboom / Albert Vanderboom / William Vanderboom / Robert “Bob” Hill / Corrupted Soul（黑影人）/ 随机 / 不需要角色 / 其他（直接输入名字）
+第 2 个问题：你想和哪些角色合影？可以多选，直接回复序号，例如：2, 5, 10。
+1. Dale Vandermeer
+2. Laura Vanderboom
+3. Mr. Owl
+4. Mr. Crow
+5. Harvey
+6. Rose Vanderboom
+7. Albert Vanderboom
+8. William Vanderboom
+9. Robert “Bob” Hill
+10. Corrupted Soul（黑影人）
+0. 随机
+不需要角色：回复“无”
+其他：直接输入名字
 ```
 
 These ten are the default major-character menu, not an exhaustive canon list. Accept any other named character, including Mr. Rabbit, Mr. Deer, other Hotel guests, Vanderboom or Eilander family members, and ordinary animals. Interpret a casual `Dave` as likely `Dale Vandermeer`, but confirm only if context makes the intended character genuinely ambiguous.
@@ -27,8 +50,20 @@ These ten are the default major-character menu, not an exhaustive canon list. Ac
 ### Question 3 — elements
 
 ```text
-第 3 个问题：你希望画面里出现哪些锈湖元素？可以多选。
-黑方块 / 白方块 / 蓝方块 / 落地钟 / 花树或生命树 / 月亮或血月 / 锈湖湖面 / 猫头鹰面具 / 老式电话 / 电梯或地铁列车 / 随机 / 只保留最低5个元素 / 其他（直接输入）
+第 3 个问题：你希望画面里出现哪些锈湖元素？可以多选，直接回复序号，例如：1, 4, 9。
+1. 黑方块
+2. 白方块
+3. 蓝方块
+4. 落地钟
+5. 花树或生命树
+6. 月亮或血月
+7. 锈湖湖面
+8. 猫头鹰面具
+9. 老式电话
+10. 电梯或地铁列车
+0. 随机
+只保留最低 5 个元素：回复“最低5个”
+其他：直接输入
 ```
 
 Accept multiple selections and free-form canonical props. For `随机`, choose only items compatible with the chosen game and scene. Every image must contain at least five distinct canonical cues; if the user's selections provide fewer, fill the remainder automatically from the chosen scene. Recommend no more than three accompanying characters and three freestanding props, using the canonical setting and wardrobe to reach the minimum without clutter. If the user asks for no extras, explain that this skill still retains the minimum five scene-native cues.
@@ -102,9 +137,11 @@ Verify the outfit from a screenshot before prompting. Preserve its key silhouett
 Translate the portrait into the franchise's restrained 2D point-and-click character language. The character-model look is a hard requirement:
 
 - flat color fills bounded by visible, slightly irregular black outlines;
-- pale cream, gray, or lightly tinted face planes with almost no modeled volume;
-- simple almond, oval, or dot-like eyes; sparse lashes; short graphic brows; a narrow simplified nose; a small line-based mouth;
-- hair grouped into a few solid shapes with only sparse interior strokes;
+- a pale ivory, chalk-white, or cool light-gray face plane with almost no modeled volume, chosen independently of the source portrait's skin tone;
+- exactly one of two eye constructions: large white almond/round eyes with tiny dot pupils, or small bean/dot eyes beneath short horizontal lid marks; keep the iris minimal or absent and never paint realistic glossy eyes;
+- sparse lashes, short graphic brows, and a narrow simplified nose;
+- a closed, thin-line mouth in pale gray, ivory, or near-skin color; no lipstick effect, red fill, saturated pink, wet highlight, or realistic lip volume;
+- hair grouped into a few solid locks with a strong black outer contour and clearly visible black interior strand/groove lines following the direction of each lock;
 - at most a few hard-edged shadow or blush shapes—no soft airbrushed gradients;
 - stiff, front-facing or minimally angled anatomy with simplified neck, shoulders, hands, and clothing folds;
 - muted brown, ochre, olive, cream, gray, and black palette derived from the selected screenshot;
@@ -112,16 +149,16 @@ Translate the portrait into the franchise's restrained 2D point-and-click charac
 - lightly aged paper, painted-wall, wood, or fabric texture where present in the reference;
 - subdued macabre tension rather than gore, comedy, glossy fantasy art, or cinematic photorealism.
 
-Derive color and lighting from the chosen screenshot instead of applying one universal palette to every game. Explicitly reject realistic skin texture, pores, subsurface glow, glossy photographic eyes, detailed eyelashes, smooth digital-painting gradients, cinematic depth of field, and portrait-photography lighting.
+Derive environment color and lighting from the chosen screenshot instead of applying one universal palette to every game, but keep the subject's face pale by default even when the portrait has a different skin tone. Preserve ethnicity through proportions, facial geometry, and hair rather than realistic skin color. Explicitly reject realistic skin texture, pores, subsurface glow, glossy photographic eyes, large iris/pupil rendering, detailed eyelashes, saturated lips, smooth digital-painting gradients, cinematic depth of field, and portrait-photography lighting.
 
 ## Default expression and posture
 
 Unless the user asks for a different emotion, use the drained, melancholy character acting seen in the supplied ensemble reference:
 
-- heavy, lowered upper eyelids and small restrained pupils;
+- heavy, lowered upper eyelids and tiny restrained pupils, or short lid lines with bean/dot eyes;
 - inner ends of the brows subtly raised, with the outer ends level or slightly lowered;
 - gaze lowered, unfocused, or turned slightly away from the viewer;
-- mouth closed and flat or gently downturned, never smiling;
+- mouth closed, pale, and flat or gently downturned, never smiling and never filled red or saturated pink;
 - face held still, with minimal cheek animation and no beauty-pose tension;
 - neck slightly forward, shoulders lowered, arms resting or hanging with little energy;
 - emotional register: exhausted, lonely, resigned, and numb—not crying, screaming, comic, sulky-cute, or glamorous.
@@ -145,9 +182,9 @@ Choose 3–5 visually strongest anchors from the photograph. Prefer features tha
 - hairstyle, fringe, hairline, or facial hair;
 - a characteristic eye/brow, nose, or mouth shape;
 - glasses, jewelry, freckles, scars, or another signature marker;
-- approximate age and skin-tone relationship.
+- approximate age.
 
-Do not attempt a feature-by-feature likeness. Expression, gaze, pose, hand position, and clothes may all change. Stylize aggressively by flattening planes, exaggerating the chosen anchors slightly, and discarding minor photographic detail. Do not change ethnicity or approximate age, and never turn the human head into an animal mask.
+Do not attempt a feature-by-feature likeness. Expression, gaze, pose, hand position, clothes, and skin tone may all change. Stylize aggressively by flattening planes, exaggerating the chosen anchors slightly, and discarding minor photographic detail. Preserve ethnicity through recognizable geometry and hair rather than photographic skin pigmentation; keep approximate age, and never turn the human head into an animal mask.
 
 If the source portrait is low quality, preserve only traits that are actually visible. Do not invent distinctive facial features.
 
@@ -167,12 +204,12 @@ Wardrobe: replace source clothes with <verified canonical character outfit and d
 Group cast: <user-selected characters, arranged beside or behind the subject without merging>
 Environmental elements: <user-selected canonical props or motifs>
 Canonical cue checklist: <name at least five separately visible items: location, wardrobe, cast, and props>
-Style/medium: hard-flat 2D Rusty Lake character art, irregular black contours, pale minimally shaded face, schematic eyes/nose/mouth, solid-shape hair, rigid illustrated anatomy, lightly aged texture
-Expression/posture: heavy lowered eyelids, subtly raised inner brows, distant lowered gaze, flat or downturned closed mouth, long still face, lowered shoulders, restrained tired pose; exhausted and resigned, not smiling or theatrically sad
+Style/medium: hard-flat 2D Rusty Lake character art, irregular black contours, pale ivory/chalk-white/cool-gray minimally shaded face independent of source skin tone; choose either large white eyes with tiny dot pupils or small bean/dot eyes under short lid lines; narrow schematic nose; pale near-skin thin-line mouth; solid hair locks with visible black interior strand lines; rigid illustrated anatomy; lightly aged texture
+Expression/posture: heavy lowered upper lids, tiny pupils or bean/dot eyes, subtly raised inner brows, distant lowered gaze, pale flat or downturned closed mouth, long still face, lowered shoulders, restrained tired pose; exhausted and resigned, not smiling or theatrically sad
 Composition/framing: 1:1 square avatar, medium head-and-shoulders or bust crop matching the approved reference; full head silhouette 50–65% of canvas height; visible facial oval 38–48% and never above 50% unless requested; retain adult neck and shoulder anatomy; compact peripheral cast and props
 Identity anchors: retain only <specific face silhouette, hair, feature, accessory, or mark>; do not reproduce photographic detail
-Constraints: user remains fully human; canonical background remains one location; include every user-selected item and at least five separately visible canonical cues; no direct screenshot collage
-Avoid: extreme close-up with visible facial oval over half the canvas height, face too small to dominate, fewer than five canonical cues, cheerful or glamorous expression, smile, wide bright eyes, chibi or bobblehead anatomy, floating head, semi-realistic or realistic face, soft skin shading, pores, glossy eyes, detailed eyelashes, airbrushed gradients, photographic lighting, gender-incongruent wardrobe without user request, invented room, mixed locations, animal head on user, face obstruction, generic gothic fantasy, glossy rendering, gore, text, logo, watermark, unrequested people
+Constraints: user remains fully human; face stays pale instead of matching photographic skin tone; eyes follow one approved construction; hair has black internal linework; mouth has no saturated color; canonical background remains one location; include every user-selected item and at least five separately visible canonical cues; no direct screenshot collage
+Avoid: extreme close-up with visible facial oval over half the canvas height, face too small to dominate, fewer than five canonical cues, cheerful or glamorous expression, smile, realistic irises, glossy eyes, large pupils, colored lipstick, red or saturated pink lips, hair rendered as an unlined solid mass, chibi or bobblehead anatomy, floating head, semi-realistic or realistic face, soft skin shading, pores, detailed eyelashes, airbrushed gradients, photographic lighting, gender-incongruent wardrobe without user request, invented room, mixed locations, animal head on user, face obstruction, generic gothic fantasy, glossy rendering, gore, text, logo, watermark, unrequested people
 Output: exactly one final image
 ```
 
@@ -184,6 +221,7 @@ If a correction is necessary, change only the failed invariant. Examples:
 
 - Identity drift: restate only the chosen 3–5 signature anchors; keep scene, wardrobe, and framing unchanged.
 - Too realistic: demand flat pale facial shapes, sparse line features, solid-shape hair, rigid anatomy, and no gradients or photographic skin; keep the chosen anchors unchanged.
+- Face-style drift: make the face pale ivory/chalk-white, choose either large-white/tiny-pupil eyes or bean/dot eyes, add black interior hair lines, and remove red/pink lip color; keep identity anchors, scene, wardrobe, and framing unchanged.
 - Not melancholy enough: lower the upper eyelids and gaze, subtly raise the inner brows, close and flatten/downturn the mouth, lower the shoulders, and remove any smile or beauty pose; keep identity anchors unchanged.
 - Face too small: tighten to the approved medium-close scale—full head silhouette 50–65% and visible facial oval 38–48% of canvas height—while keeping expression, identity anchors, wardrobe, and scene cues.
 - Face too large: pull back until the visible facial oval is 38–48% of canvas height, keeping the same expression, identity anchors, wardrobe, and scene cues.

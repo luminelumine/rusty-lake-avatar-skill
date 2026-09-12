@@ -17,10 +17,12 @@ The skill does more than imitate a drawing style. It asks the user to choose a g
 
 - 保留人物最有辨识度的 3–5 个特征，但使用扁平、克制、略显疲惫的游戏人物造型；
 - 先分三轮询问场景来源游戏、合影角色和环境元素；
+- 每轮把 10 个主要选项按 `1–10` 逐行列出，单选可只回复一个数字，多选可回复 `2, 5, 10`；
 - 从所选游戏中查找并重绘一个可验证的真实场景，而不是凭空编造背景；
 - 为人物选择符合场景与性别呈现的游戏角色服装；
 - 默认生成一张正方形头像，并保证至少出现 5 个可单独辨认的锈湖元素；
 - 保持人物为人脸主体，动物头人、黑影人、Harvey 等只作为陪衬或彩蛋。
+- 默认使用苍白的平面肤色、极小瞳孔或豆豆眼、带黑色内部线条的块面头发，以及无明显唇色的嘴巴。
 
 ### 要求
 
@@ -62,6 +64,8 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
    - 想和哪些角色合影；
    - 希望出现哪些元素或道具。
 
+   每个问题都会把 10 个主要选项按行编号。单选直接回复一个序号，多选回复多个序号即可。
+
 4. 回答完三个问题后，技能会核对参考素材并生成一张 1:1 头像。
 
 完整示例：
@@ -69,11 +73,11 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
 ```text
 用户：$rusty-lake-avatar 请用我上传的照片生成头像
 技能：第 1 个问题：你希望从哪一部游戏里随机抽取场景作为构图骨架？
-用户：Cube Escape: Birthday
+用户：3
 技能：第 2 个问题：你想和哪些角色合影？
-用户：Harvey
+用户：5
 技能：第 3 个问题：你希望画面里出现哪些锈湖元素？
-用户：随机
+用户：0
 ```
 
 你也可以在回答中选择 `随机`，或直接输入菜单之外的游戏、角色和元素。
@@ -84,6 +88,7 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
 - 1:1 正方形头像；
 - 人脸是画面的明确主体，同时保留足够场景信息；
 - 默认使用疲惫、低落、疏离的表情；
+- 默认使用苍白平面脸；眼睛采用“大眼白配极小瞳孔”或“豆豆眼”之一；头发带清晰黑色纹理线；嘴唇接近肤色；
 - 人物始终保留人类面孔；
 - 至少 5 个可独立识别的锈湖宇宙元素；
 - 不直接拼贴官方截图，只根据核实过的参考重新绘制。
@@ -94,7 +99,7 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
 
 `rusty-lake-avatar` turns a portrait into a square, strongly stylized avatar grounded in a verified Rusty Lake or Cube Escape scene. It preserves a few recognizable identity anchors, uses a canonical outfit, keeps the user's face human and dominant, and adds at least five distinct lore cues.
 
-Before generation, it asks three questions in separate turns:
+Before generation, it asks three questions in separate turns. Each menu prints ten primary choices as a vertical `1`–`10` list, so a user can answer with a number or a comma-separated set of numbers:
 
 1. Which game should provide the scene skeleton?
 2. Which characters should join the portrait?
@@ -134,6 +139,8 @@ $rusty-lake-avatar Turn my attached portrait into an avatar
 ```
 
 Answer the three setup questions. The skill then verifies a scene, wardrobe, characters, and props before producing exactly one square avatar.
+
+The character face defaults to a pale flat plane rather than the portrait's photographic skin tone. Eyes use either large whites with tiny pupils or compact bean/dot marks; hair has visible black interior strand lines; lips stay pale and nearly colorless.
 
 ### Repository layout
 
