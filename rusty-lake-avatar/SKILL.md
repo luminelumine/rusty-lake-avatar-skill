@@ -22,7 +22,7 @@ Before researching or generating, collect the setup through three separate quest
 2. Which characters should pose with the user?
 3. Which environmental elements or props should appear?
 
-Use the exact menus in [references/scene-and-prompt-guide.md](references/scene-and-prompt-guide.md). In every menu, print choices `1` through `10` vertically, one choice per line; never compress them into a slash-separated sentence. Tell the user they may reply with only the number, and accept comma- or punctuation-separated numbers for multi-select questions. Keep `0` for `随机` / `auto` and accept free-form input for choices outside the menu. After the user chooses a game, randomly select one verified scene from that game unless they also name an exact scene. Do not silently answer any category the user did not answer or mark `auto`.
+Use the exact menus in [references/scene-and-prompt-guide.md](references/scene-and-prompt-guide.md). In every menu, print choices `1` through `10` vertically, one choice per line, followed by `11. 随机`; never compress them into a slash-separated sentence. Tell the user they may reply with only the number, and accept comma- or punctuation-separated numbers for multi-select questions. Use `11` as the sole displayed numeric code for `随机` / `auto`; never display or suggest `0` as an alias. Accept free-form input for choices outside the menu. After the user chooses a game, randomly select one verified scene from that game unless they also name an exact scene. Do not silently answer any category the user did not answer or mark `auto`.
 
 ## Defaults
 
@@ -34,7 +34,7 @@ Use the exact menus in [references/scene-and-prompt-guide.md](references/scene-a
 - Freely change pose and expression to fit the selected scene. Unless the user requests another mood, give the person the weary, downcast, emotionally drained expression used by many Rusty Lake characters.
 - Replace the source clothing by default with a randomly selected, verified Rusty Lake character outfit that fits the scene and the subject's stated or apparent gender presentation. Use explicit user-provided gender information first. If the photo clearly presents as feminine, choose clothing worn by a female character; if it clearly presents as masculine, choose clothing worn by a male character. If presentation is unclear or nonbinary, use a verified gender-neutral outfit or ask instead of guessing. Respect an explicit outfit or cross-gender styling choice.
 - Use one verified game setting and the characters/elements selected during the opening choice.
-- Include at least five visually distinct, canonically verified Rusty Lake cues besides the user's identity. If the user's selections provide fewer than five, automatically add scene-compatible cues without mixing unrelated locations.
+- Include at least five visually distinct, canonically verified Rusty Lake cues besides the user's identity. This minimum is an unconditional default, not a menu choice: if the user's selections provide fewer than five, automatically add compatible, scene-native cues until the total reaches five, without asking another question or mixing unrelated locations.
 - Keep adult, non-chibi neck and shoulder construction even though the avatar uses a large close crop.
 
 ## Canonical scene gate

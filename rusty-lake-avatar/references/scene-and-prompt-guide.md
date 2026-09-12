@@ -4,7 +4,7 @@ Use this guide for every avatar request after inspecting the portrait.
 
 ## Three-turn opening interview
 
-Ask these as three separate turns, not one combined questionnaire. Ask only the next unanswered question, then stop and wait. Every question must show the ten primary choices vertically as `1.` through `10.`, one option per line. Tell the user that a bare number is a complete answer; for multi-select menus, accept forms such as `2, 5, 10`, `2 5 10`, or `2、5、10`. Use `0` for random selection and keep free-form input available beneath the numbered list.
+Ask these as three separate turns, not one combined questionnaire. Ask only the next unanswered question, then stop and wait. Every question must show the ten primary choices vertically as `1.` through `10.`, one option per line, followed by `11. 随机`. Tell the user that a bare number is a complete answer; for multi-select menus, accept forms such as `2, 5, 10`, `2 5 10`, or `2、5、10`. Use `11` as the only displayed numeric code for random selection; never display, suggest, or later reinterpret random as `0`. Keep free-form input available beneath the numbered list.
 
 ### Question 1 — game
 
@@ -20,7 +20,7 @@ Ask these as three separate turns, not one combined questionnaire. Ask only the 
 8. Rusty Lake Paradise
 9. The White Door
 10. Underground Blossom
-0. 随机
+11. 随机
 其他：直接输入游戏名
 ```
 
@@ -40,7 +40,7 @@ The user chooses a game, not a generic location. Afterward, research that game a
 8. William Vanderboom
 9. Robert “Bob” Hill
 10. Corrupted Soul（黑影人）
-0. 随机
+11. 随机
 不需要角色：回复“无”
 其他：直接输入名字
 ```
@@ -61,12 +61,11 @@ These ten are the default major-character menu, not an exhaustive canon list. Ac
 8. 猫头鹰面具
 9. 老式电话
 10. 电梯或地铁列车
-0. 随机
-只保留最低 5 个元素：回复“最低5个”
+11. 随机
 其他：直接输入
 ```
 
-Accept multiple selections and free-form canonical props. For `随机`, choose only items compatible with the chosen game and scene. Every image must contain at least five distinct canonical cues; if the user's selections provide fewer, fill the remainder automatically from the chosen scene. Recommend no more than three accompanying characters and three freestanding props, using the canonical setting and wardrobe to reach the minimum without clutter. If the user asks for no extras, explain that this skill still retains the minimum five scene-native cues.
+Accept multiple selections and free-form canonical props. For `11` / `随机`, choose only items compatible with the chosen game and scene. Every image must contain at least five distinct canonical cues as an unconditional default. Do not present this minimum as a selectable option and do not ask whether the user wants it. If the user's chosen elements, setting, wardrobe, cast, and props total fewer than five countable cues, automatically add the least intrusive compatible cues from the same scene until the total reaches five. For example, if the user selects only items `1, 2, 3`, add two compatible scene-native cues automatically. Recommend no more than three accompanying characters and three freestanding props, using the canonical setting and wardrobe to reach the minimum without clutter. If the user asks for no extras, explain that this skill still retains the minimum five scene-native cues.
 
 ## Scene selection
 

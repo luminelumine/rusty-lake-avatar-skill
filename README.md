@@ -17,7 +17,7 @@ The skill does more than imitate a drawing style. It asks the user to choose a g
 
 - 保留人物最有辨识度的 3–5 个特征，但使用扁平、克制、略显疲惫的游戏人物造型；
 - 先分三轮询问场景来源游戏、合影角色和环境元素；
-- 每轮把 10 个主要选项按 `1–10` 逐行列出，单选可只回复一个数字，多选可回复 `2, 5, 10`；
+- 每轮把 10 个主要选项按 `1–10` 逐行列出，并固定用 `11` 表示“随机”；单选可只回复一个数字，多选可回复 `2, 5, 10`；
 - 从所选游戏中查找并重绘一个可验证的真实场景，而不是凭空编造背景；
 - 为人物选择符合场景与性别呈现的游戏角色服装；
 - 默认生成一张正方形头像，并保证至少出现 5 个可单独辨认的锈湖元素；
@@ -64,7 +64,7 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
    - 想和哪些角色合影；
    - 希望出现哪些元素或道具。
 
-   每个问题都会把 10 个主要选项按行编号。单选直接回复一个序号，多选回复多个序号即可。
+   每个问题都会把 10 个主要选项按行编号，并把 `11. 随机` 作为最后一项。单选直接回复一个序号，多选回复多个序号即可。
 
 4. 回答完三个问题后，技能会核对参考素材并生成一张 1:1 头像。
 
@@ -77,10 +77,10 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
 技能：第 2 个问题：你想和哪些角色合影？
 用户：5
 技能：第 3 个问题：你希望画面里出现哪些锈湖元素？
-用户：0
+用户：11
 ```
 
-你也可以在回答中选择 `随机`，或直接输入菜单之外的游戏、角色和元素。
+你也可以回复 `11` 选择随机，或直接输入菜单之外的游戏、角色和元素。至少 5 个锈湖元素是始终生效的默认规则，不会作为问题单独询问；若用户选择不足 5 个，技能会从同一场景自动补齐。
 
 ### 默认输出规则
 
@@ -90,7 +90,7 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
 - 默认使用疲惫、低落、疏离的表情；
 - 默认使用苍白平面脸；眼睛采用“大眼白配极小瞳孔”或“豆豆眼”之一；头发带清晰黑色纹理线；嘴唇接近肤色；
 - 人物始终保留人类面孔；
-- 至少 5 个可独立识别的锈湖宇宙元素；
+- 至少 5 个可独立识别的锈湖宇宙元素；选择不足时自动从同一场景补齐，无需用户另选；
 - 不直接拼贴官方截图，只根据核实过的参考重新绘制。
 
 ## English
@@ -99,7 +99,7 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
 
 `rusty-lake-avatar` turns a portrait into a square, strongly stylized avatar grounded in a verified Rusty Lake or Cube Escape scene. It preserves a few recognizable identity anchors, uses a canonical outfit, keeps the user's face human and dominant, and adds at least five distinct lore cues.
 
-Before generation, it asks three questions in separate turns. Each menu prints ten primary choices as a vertical `1`–`10` list, so a user can answer with a number or a comma-separated set of numbers:
+Before generation, it asks three questions in separate turns. Each menu prints ten primary choices as a vertical `1`–`10` list followed by `11. Random`, so a user can answer with a number or a comma-separated set of numbers:
 
 1. Which game should provide the scene skeleton?
 2. Which characters should join the portrait?
@@ -139,6 +139,8 @@ $rusty-lake-avatar Turn my attached portrait into an avatar
 ```
 
 Answer the three setup questions. The skill then verifies a scene, wardrobe, characters, and props before producing exactly one square avatar.
+
+The five-cue minimum is always automatic rather than a menu choice. If the user's choices account for fewer than five distinct canonical cues, the skill silently adds compatible cues from the same verified scene until the minimum is met.
 
 The character face defaults to a pale flat plane rather than the portrait's photographic skin tone. Eyes use either large whites with tiny pupils or compact bean/dot marks; hair has visible black interior strand lines; lips stay pale and nearly colorless.
 
