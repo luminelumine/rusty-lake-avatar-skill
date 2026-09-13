@@ -21,8 +21,8 @@ The skill does more than imitate a drawing style. It asks the user to choose a g
 - 从所选游戏中查找并重绘一个可验证的真实场景，而不是凭空编造背景；
 - 为人物选择符合场景与性别呈现的游戏角色服装；
 - 默认生成一张正方形头像，并保证至少出现 5 个可单独辨认的锈湖元素；
-- 保持人物为人脸主体，动物头人、黑影人、Harvey 等只作为陪衬或彩蛋。
-- 所有人物统一使用技能内置参考图的低饱和、微偏粉浅象牙色平面脸，不受场景色调影响；同时使用比经典极小点状瞳孔大约 1.5–2 倍的小圆瞳孔、直视观者的视线、带黑色内部线条的块面头发，以及无明显唇色的嘴巴。
+- 保持人物为人脸主体，动物头人、黑影人、Harvey 等只作为陪衬或彩蛋；Harvey 固定使用技能内置的绿色鹦鹉参考，不能用场景里的普通小鸟代替。
+- 所有人物的脸、耳、颈、胸、手臂和手统一使用技能内置参考图的 `RGB(219, 197, 175)` / `#DBC5AF` 平面肤色，不受场景色调影响，并在交付前运行数值校验；生成纠色仍不达标时，只允许对明确的皮肤区域做一次确定性色彩校正。同时使用比经典极小点状瞳孔大约 1.5–2 倍的小圆瞳孔、直视观者的视线、带黑色内部线条的块面头发，以及无明显唇色的嘴巴。
 
 ### 要求
 
@@ -88,7 +88,7 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
 - 1:1 正方形头像；
 - 人脸是画面的明确主体，同时保留足够场景信息；
 - 默认使用疲惫、低落的表情，同时直视观者；
-- 统一使用内置色彩参考中的低饱和、微偏粉浅象牙色平面脸，禁止偏黄、米黄、赭色或棕褐；眼睛采用大眼白配小圆瞳孔，瞳孔约为经典极小点状瞳孔的 1.5–2 倍；仅在用户明确要求时使用豆豆眼；头发带清晰黑色纹理线；嘴唇接近肤色；
+- 所有可见皮肤统一使用内置色彩参考中的 `RGB(219, 197, 175)` / `#DBC5AF` 平面肤色，并通过数值校验后才能交付；眼睛采用大眼白配小圆瞳孔，瞳孔约为经典极小点状瞳孔的 1.5–2 倍；仅在用户明确要求时使用豆豆眼；头发带清晰黑色纹理线；嘴唇接近肤色；
 - 场景近景保持原作的线条节制：以大色块、外轮廓和少量结构线表现，不额外堆叠砖缝、草纹、木纹、石纹或山体微细节；
 - 人物始终保留人类面孔；
 - 至少 5 个可独立识别的锈湖宇宙元素；选择不足时自动从同一场景补齐，无需用户另选；
@@ -143,7 +143,7 @@ Answer the three setup questions. The skill then verifies a scene, wardrobe, cha
 
 The five-cue minimum is always automatic rather than a menu choice. If the user's choices account for fewer than five distinct canonical cues, the skill silently adds compatible cues from the same verified scene until the minimum is met.
 
-Every character uses the same low-saturation, slightly pink light-ivory face plane from the bundled color reference, without yellow, beige, ochre, or tan scene tint. Eyes default to large whites with small round pupils about 1.5–2 times the classic tiny-dot diameter and direct eye contact; compact bean/dot marks are used only when explicitly requested. Hair has visible black interior strand lines, lips stay pale and nearly colorless, and scenery keeps the source game's sparse line economy instead of adding decorative micro-detail.
+Every visible human skin plane—face, ears, neck, chest, arms, and hands—uses the same `RGB(219, 197, 175)` / `#DBC5AF` base from the bundled reference and must pass a numeric color gate before delivery. A deterministic skin-region-only correction is available when the image model's single corrective edit still misses only this invariant. Every selected named companion needs its own verified appearance reference; Harvey uses the bundled green-parrot reference and may never be replaced by a generic scene bird. Eyes default to large whites with small round pupils about 1.5–2 times the classic tiny-dot diameter and direct eye contact; compact bean/dot marks are used only when explicitly requested. Hair has visible black interior strand lines, lips stay pale and nearly colorless, and scenery keeps the source game's sparse line economy instead of adding decorative micro-detail.
 
 ### Repository layout
 
@@ -152,6 +152,12 @@ rusty-lake-avatar/
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
+├── assets/
+│   ├── face-color-reference.png
+│   └── harvey-reference.png
+├── scripts/
+│   ├── normalize_skin_color.py
+│   └── validate_face_color.py
 └── references/
     └── scene-and-prompt-guide.md
 ```
