@@ -22,7 +22,7 @@ The skill does more than imitate a drawing style. It asks the user to choose a g
 - 为人物选择符合场景与性别呈现的游戏角色服装；
 - 默认生成一张正方形头像，并保证至少出现 5 个可单独辨认的锈湖元素；
 - 保持人物为人脸主体，动物头人、黑影人、Harvey 等只作为陪衬或彩蛋。
-- 默认使用苍白的平面肤色、极小瞳孔或豆豆眼、带黑色内部线条的块面头发，以及无明显唇色的嘴巴。
+- 所有人物统一使用技能内置参考图的低饱和、微偏粉浅象牙色平面脸，不受场景色调影响；同时使用比经典极小点状瞳孔大约 1.5–2 倍的小圆瞳孔、直视观者的视线、带黑色内部线条的块面头发，以及无明显唇色的嘴巴。
 
 ### 要求
 
@@ -87,8 +87,9 @@ Codex 通常会自动发现新技能；如果技能没有立刻出现，请重�
 - 每次生成 1 张 PNG；
 - 1:1 正方形头像；
 - 人脸是画面的明确主体，同时保留足够场景信息；
-- 默认使用疲惫、低落、疏离的表情；
-- 默认使用苍白平面脸；眼睛采用“大眼白配极小瞳孔”或“豆豆眼”之一；头发带清晰黑色纹理线；嘴唇接近肤色；
+- 默认使用疲惫、低落的表情，同时直视观者；
+- 统一使用内置色彩参考中的低饱和、微偏粉浅象牙色平面脸，禁止偏黄、米黄、赭色或棕褐；眼睛采用大眼白配小圆瞳孔，瞳孔约为经典极小点状瞳孔的 1.5–2 倍；仅在用户明确要求时使用豆豆眼；头发带清晰黑色纹理线；嘴唇接近肤色；
+- 场景近景保持原作的线条节制：以大色块、外轮廓和少量结构线表现，不额外堆叠砖缝、草纹、木纹、石纹或山体微细节；
 - 人物始终保留人类面孔；
 - 至少 5 个可独立识别的锈湖宇宙元素；选择不足时自动从同一场景补齐，无需用户另选；
 - 不直接拼贴官方截图，只根据核实过的参考重新绘制。
@@ -142,7 +143,7 @@ Answer the three setup questions. The skill then verifies a scene, wardrobe, cha
 
 The five-cue minimum is always automatic rather than a menu choice. If the user's choices account for fewer than five distinct canonical cues, the skill silently adds compatible cues from the same verified scene until the minimum is met.
 
-The character face defaults to a pale flat plane rather than the portrait's photographic skin tone. Eyes use either large whites with tiny pupils or compact bean/dot marks; hair has visible black interior strand lines; lips stay pale and nearly colorless.
+Every character uses the same low-saturation, slightly pink light-ivory face plane from the bundled color reference, without yellow, beige, ochre, or tan scene tint. Eyes default to large whites with small round pupils about 1.5–2 times the classic tiny-dot diameter and direct eye contact; compact bean/dot marks are used only when explicitly requested. Hair has visible black interior strand lines, lips stay pale and nearly colorless, and scenery keeps the source game's sparse line economy instead of adding decorative micro-detail.
 
 ### Repository layout
 

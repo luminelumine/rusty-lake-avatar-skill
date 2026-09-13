@@ -117,6 +117,8 @@ Include all requested elements, but do not import a famous character or prop if 
 
 The background must remain one real game location. Because the output is an avatar, crop that location tightly behind the face and retain only its strongest identifying architecture, furniture, palette, and props. Compatible characters may be newly staged as small companions or cameos, but they must not compete with the face.
 
+Match the source screenshot's economy of line. Simplify close scenery into broad flat shapes with one outer contour and only the structural lines needed to identify it. Do not embellish masonry with dense brick-by-brick texture, fill grass with hatching, add repeated wood grain, stipple stone, or over-render distant mountains. Environmental detail must remain sparser than the subject's facial and hair linework.
+
 ## Canonical wardrobe
 
 Replace the source clothes unless the user asks to keep them. Randomly choose one recognizable outfit worn by a verified Rusty Lake or Cube Escape character and compatible with the scene's period, mood, and the subject's stated or apparent gender presentation.
@@ -136,8 +138,8 @@ Verify the outfit from a screenshot before prompting. Preserve its key silhouett
 Translate the portrait into the franchise's restrained 2D point-and-click character language. The character-model look is a hard requirement:
 
 - flat color fills bounded by visible, slightly irregular black outlines;
-- a pale ivory, chalk-white, or cool light-gray face plane with almost no modeled volume, chosen independently of the source portrait's skin tone;
-- exactly one of two eye constructions: large white almond/round eyes with tiny dot pupils, or small bean/dot eyes beneath short horizontal lid marks; keep the iris minimal or absent and never paint realistic glossy eyes;
+- the fixed low-saturation neutral-to-slightly-pink light-ivory face plane shown in [../assets/face-color-reference.png](../assets/face-color-reference.png), with almost no modeled volume and chosen independently of the source portrait's skin tone; never allow the face to shift toward yellow, beige, ochre, or tan;
+- default to large white almond/round eyes with small round pupils about 1.5–2 times the diameter of the classic tiny-dot pupils, while keeping the pupils clearly smaller than the eye whites; use small bean/dot eyes beneath short horizontal lid marks only when the user explicitly requests them; keep the iris minimal or absent and never paint realistic glossy eyes;
 - sparse lashes, short graphic brows, and a narrow simplified nose;
 - a closed, thin-line mouth in pale gray, ivory, or near-skin color; no lipstick effect, red fill, saturated pink, wet highlight, or realistic lip volume;
 - hair grouped into a few solid locks with a strong black outer contour and clearly visible black interior strand/groove lines following the direction of each lock;
@@ -148,15 +150,15 @@ Translate the portrait into the franchise's restrained 2D point-and-click charac
 - lightly aged paper, painted-wall, wood, or fabric texture where present in the reference;
 - subdued macabre tension rather than gore, comedy, glossy fantasy art, or cinematic photorealism.
 
-Derive environment color and lighting from the chosen screenshot instead of applying one universal palette to every game, but keep the subject's face pale by default even when the portrait has a different skin tone. Preserve ethnicity through proportions, facial geometry, and hair rather than realistic skin color. Explicitly reject realistic skin texture, pores, subsurface glow, glossy photographic eyes, large iris/pupil rendering, detailed eyelashes, saturated lips, smooth digital-painting gradients, cinematic depth of field, and portrait-photography lighting.
+Derive environment color and lighting from the chosen screenshot instead of applying one universal palette to every game, but keep the subject's face fixed to the reference ivory even when the portrait or environment has a different color cast. Preserve ethnicity through proportions, facial geometry, and hair rather than realistic skin color. Explicitly reject yellow or beige facial grading, realistic skin texture, pores, subsurface glow, glossy photographic eyes, large iris/pupil rendering, detailed eyelashes, saturated lips, smooth digital-painting gradients, cinematic depth of field, and portrait-photography lighting.
 
 ## Default expression and posture
 
 Unless the user asks for a different emotion, use the drained, melancholy character acting seen in the supplied ensemble reference:
 
-- heavy, lowered upper eyelids and tiny restrained pupils, or short lid lines with bean/dot eyes;
+- heavy, lowered upper eyelids and small restrained pupils about 1.5–2 times the classic tiny-dot diameter;
 - inner ends of the brows subtly raised, with the outer ends level or slightly lowered;
-- gaze lowered, unfocused, or turned slightly away from the viewer;
+- gaze directed straight at the viewer by default, while the heavy lids and brows preserve the drained mood;
 - mouth closed, pale, and flat or gently downturned, never smiling and never filled red or saturated pink;
 - face held still, with minimal cheek animation and no beauty-pose tension;
 - neck slightly forward, shoulders lowered, arms resting or hanging with little energy;
@@ -197,18 +199,18 @@ Asset type: personal square avatar
 Primary request: redraw the person in Image 1 as a strongly simplified Rusty Lake game character posing with the selected cast
 Input images: Image 1 is the loose identity/edit target; later images, if present, are verified references for scene, cast, and wardrobe
 Canonical source: <exact game title> — <scene anchor>
-Scene/backdrop: faithfully redraw the recognizable layout, architecture, major furniture/landscape silhouettes, palette, and lighting of the verified scene; do not paste source pixels
+Scene/backdrop: faithfully redraw the recognizable layout, architecture, major furniture/landscape silhouettes, palette, and lighting of the verified scene; match its sparse line density with broad flat shapes, strong outer contours, and only essential structural interior lines; do not paste source pixels or add decorative micro-texture absent from the screenshot
 Subject: one human character derived from Image 1; keep only <3–5 signature anchors>; expression and pose may change
 Wardrobe: replace source clothes with <verified canonical character outfit and defining details>
 Group cast: <user-selected characters, arranged beside or behind the subject without merging>
 Environmental elements: <user-selected canonical props or motifs>
 Canonical cue checklist: <name at least five separately visible items: location, wardrobe, cast, and props>
-Style/medium: hard-flat 2D Rusty Lake character art, irregular black contours, pale ivory/chalk-white/cool-gray minimally shaded face independent of source skin tone; choose either large white eyes with tiny dot pupils or small bean/dot eyes under short lid lines; narrow schematic nose; pale near-skin thin-line mouth; solid hair locks with visible black interior strand lines; rigid illustrated anatomy; lightly aged texture
-Expression/posture: heavy lowered upper lids, tiny pupils or bean/dot eyes, subtly raised inner brows, distant lowered gaze, pale flat or downturned closed mouth, long still face, lowered shoulders, restrained tired pose; exhausted and resigned, not smiling or theatrically sad
+Style/medium: hard-flat 2D Rusty Lake character art, irregular black contours, minimally shaded face matching the fixed low-saturation neutral-pink light ivory in Image <face-color reference>; never yellow, beige, ochre, or tan; default to large white eyes with small round pupils about 1.5–2 times the classic tiny-dot diameter and still clearly smaller than the eye whites; use bean/dot eyes only if explicitly requested; narrow schematic nose; pale near-skin thin-line mouth; solid hair locks with visible black interior strand lines; rigid illustrated anatomy; lightly aged texture
+Expression/posture: heavy lowered upper lids, small restrained pupils, subtly raised inner brows, direct eye contact with the viewer, pale flat or downturned closed mouth, long still face, lowered shoulders, restrained tired pose; exhausted and resigned, not smiling or theatrically sad
 Composition/framing: 1:1 square avatar, medium head-and-shoulders or bust crop matching the approved reference; full head silhouette 50–65% of canvas height; visible facial oval 38–48% and never above 50% unless requested; retain adult neck and shoulder anatomy; compact peripheral cast and props
 Identity anchors: retain only <specific face silhouette, hair, feature, accessory, or mark>; do not reproduce photographic detail
-Constraints: user remains fully human; face stays pale instead of matching photographic skin tone; eyes follow one approved construction; hair has black internal linework; mouth has no saturated color; canonical background remains one location; include every user-selected item and at least five separately visible canonical cues; no direct screenshot collage
-Avoid: extreme close-up with visible facial oval over half the canvas height, face too small to dominate, fewer than five canonical cues, cheerful or glamorous expression, smile, realistic irises, glossy eyes, large pupils, colored lipstick, red or saturated pink lips, hair rendered as an unlined solid mass, chibi or bobblehead anatomy, floating head, semi-realistic or realistic face, soft skin shading, pores, detailed eyelashes, airbrushed gradients, photographic lighting, gender-incongruent wardrobe without user request, invented room, mixed locations, animal head on user, face obstruction, generic gothic fantasy, glossy rendering, gore, text, logo, watermark, unrequested people
+Constraints: user remains fully human; face matches the fixed reference ivory instead of the portrait or scene color cast; eyes follow one approved construction; hair has black internal linework; mouth has no saturated color; canonical background remains one location and no more line-dense than its verified screenshot; include every user-selected item and at least five separately visible canonical cues; no direct screenshot collage
+Avoid: extreme close-up with visible facial oval over half the canvas height, face too small to dominate, fewer than five canonical cues, cheerful or glamorous expression, smile, gaze turned away from the viewer unless requested, pupils left at the old tiny-dot scale, realistic irises, glossy eyes, pupils large enough to dominate the eye whites, yellow/beige/ochre/tan face, colored lipstick, red or saturated pink lips, hair rendered as an unlined solid mass, dense brick seams, grass hatching, repeated wood grain, stone stippling, over-rendered mountains, chibi or bobblehead anatomy, floating head, semi-realistic or realistic face, soft skin shading, pores, detailed eyelashes, airbrushed gradients, photographic lighting, gender-incongruent wardrobe without user request, invented room, mixed locations, animal head on user, face obstruction, generic gothic fantasy, glossy rendering, gore, text, logo, watermark, unrequested people
 Output: exactly one final image
 ```
 
@@ -220,14 +222,16 @@ If a correction is necessary, change only the failed invariant. Examples:
 
 - Identity drift: restate only the chosen 3–5 signature anchors; keep scene, wardrobe, and framing unchanged.
 - Too realistic: demand flat pale facial shapes, sparse line features, solid-shape hair, rigid anatomy, and no gradients or photographic skin; keep the chosen anchors unchanged.
-- Face-style drift: make the face pale ivory/chalk-white, choose either large-white/tiny-pupil eyes or bean/dot eyes, add black interior hair lines, and remove red/pink lip color; keep identity anchors, scene, wardrobe, and framing unchanged.
-- Not melancholy enough: lower the upper eyelids and gaze, subtly raise the inner brows, close and flatten/downturn the mouth, lower the shoulders, and remove any smile or beauty pose; keep identity anchors unchanged.
+- Face-style drift: restore the fixed low-saturation neutral-pink light-ivory face plane from `assets/face-color-reference.png`, use large white eyes with small round pupils about 1.5–2 times the classic tiny-dot diameter, direct the gaze at the viewer, add black interior hair lines, and remove red/pink lip color; keep identity anchors, scene, wardrobe, and framing unchanged.
+- Face-color drift: match the face plane to `assets/face-color-reference.png`, remove yellow/beige/ochre/tan cast and scene-color spill, and keep every other visual unchanged.
+- Not melancholy enough: lower the upper eyelids without lowering the gaze, subtly raise the inner brows, keep direct eye contact, close and flatten/downturn the mouth, lower the shoulders, and remove any smile or beauty pose; keep identity anchors unchanged.
 - Face too small: tighten to the approved medium-close scale—full head silhouette 50–65% and visible facial oval 38–48% of canvas height—while keeping expression, identity anchors, wardrobe, and scene cues.
 - Face too large: pull back until the visible facial oval is 38–48% of canvas height, keeping the same expression, identity anchors, wardrobe, and scene cues.
 - Fewer than five canonical cues: add only the missing number of compact, scene-native cues and keep the portrait scale and face unobstructed.
 - Close crop looks chibi: keep the face large but restore adult neck width, shoulder slope, and upper-chest scale; remove doll-like or bobblehead distortion.
 - Wrong-gender wardrobe: change only the clothing to a verified outfit worn by a character matching the subject's stated or apparent gender presentation; keep face, expression, crop, scene, and cast unchanged.
 - Background drift: restate the verified room layout and landmark props; keep the subject unchanged.
+- Over-detailed scenery: simplify only the environment into broad fills, outer contours, and essential structural lines matching the source screenshot; remove decorative brick, grass, wood, stone, and mountain micro-texture while keeping layout, props, subject, and canonical cues unchanged.
 - Overcrowding: simplify or shrink the least important extras while retaining at least five countable canonical cues; favor the verified location, outfit, selected cast, and the clearest props.
 - Animal-head error: restore the user's original human face and move the animal-headed figure into the background.
 
